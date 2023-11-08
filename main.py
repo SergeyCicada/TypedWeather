@@ -1,8 +1,7 @@
-from format_weather import *
+from functions.format_weather import *
 from flask import Flask, request, render_template
-import logging
 
-logging.basicConfig(filename="Basic.log")
+#logging.basicConfig(filename="Basic.log")
 
 app = Flask(__name__)
 
@@ -12,13 +11,14 @@ def search_weather():
     return render_template("form.html")
 
 
-@app.route('/search/')
+@app.route('/search/', methods=['POST'])
 def weather():
     try:
         s = request.values["s"]
-        return format_weather(get_weather(get_coordinates(s)))
+        weather = format_weather(get_weather(get_coordinates(s)))
+        return render_template("weather.html", weather=weather)
     except Exception:
-        return "Sorry, page not found ;("
+        return "Sorry, page not found 404 ;d("
 
 
 if __name__ == '__main__':
