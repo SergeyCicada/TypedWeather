@@ -1,7 +1,8 @@
+import logging
 from functions.format_weather import *
 from flask import Flask, request, render_template
 
-#logging.basicConfig(filename="Basic.log")
+logging.basicConfig(filename="Basic.log")
 
 app = Flask(__name__)
 
