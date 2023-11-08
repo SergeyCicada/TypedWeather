@@ -1,4 +1,6 @@
+
 import logging
+
 from functions.format_weather import *
 from flask import Flask, request, render_template
 
@@ -19,7 +21,7 @@ def weather():
         weather = format_weather(get_weather(get_coordinates(s)))
         return render_template("weather.html", weather=weather)
     except Exception:
-        return "Sorry, page not found 404 ;d("
+        return "Sorry, page not found 404 ;("
 
 
 if __name__ == '__main__':
