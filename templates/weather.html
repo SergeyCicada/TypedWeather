@@ -21,7 +21,7 @@
                     </div>
 
                     <nav class="header-nav">
-                        <a class="header-nav-link active" href="#">Home</a>
+                        <a class="header-nav-link active" href="http://127.0.0.1:5000/">Home</a>
                     </nav>
 
 
@@ -33,18 +33,9 @@
 
         <div class="container">
             <div class="content">
-                <h2 class="subtitle">Search Weather</h2>
-                <h2 class="title"> Enter city </h2>
+                <h2 class="subtitle">{% block title %} {{ weather }} {% endblock %}</h2>
             </div>
 
-            <form class="form" action='/search/' method="POST">
-                    <div class="form-group">
-                        <input class="input" type="text" name="s" placeholder="City">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn btn-full"> Send </button>
-                    </div>
-            </form>
 
         </div>
 

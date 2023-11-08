@@ -1,7 +1,7 @@
 import requests
-from get_coordinates import *
+from functions.get_coordinates import *
 from typing import NamedTuple
-from config import *
+from config import OPENWEATHER_KEY
 
 Celsius = float  # type - Literal
 
@@ -14,9 +14,7 @@ class Weather(NamedTuple):
 def get_weather(coordinates: Coordinates) -> Weather:
     """Requests weather in OpenWeather API and return weather"""
 
-    w = requests.get(f'https://api.openweathermap.org/data/2.5/'
-                    f'weather?lat={coordinates.latitude}&lon={coordinates.longitude}'
-                    f'&appid={OPENWEATHER_KEY}&units=metric')
+    w = requests.get(f'https://api.openweathermap.org/data/2.5/weather?lat={coordinates.latitude}&lon={coordinates.longitude}&appid={OPENWEATHER_KEY}&units=metric')
     weather = w.json()
     return Weather(
         temperature=weather['main']['temp'],
