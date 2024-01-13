@@ -16,3 +16,6 @@ For the program to work, you need to get the key from the link and put it in con
 https://home.openweathermap.org/users/sign_in
 
 REQUIREMENTS in requirements.txt
+
+### Author: Sergey Evgrafov
+### This project was created and maintained by Sergey Evgrafov
